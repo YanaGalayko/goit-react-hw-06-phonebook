@@ -12,6 +12,7 @@ return (
     <FilterContainer>
         <FilterText>Find contacts by name</FilterText>
         <FilterInputn
+        name="filter"
          type="text"
          value={filter}
          onChange={evt => dispatch(filterContacts(evt.target.value))}

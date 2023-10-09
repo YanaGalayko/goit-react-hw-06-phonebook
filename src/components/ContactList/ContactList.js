@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 export const ContactList = () => {
     const contacts = useSelector(state => state.contacts.contacts);
     const filter = useSelector(state => state.filter);
-    console.log(filter);
   
     const filterContacts = contacts.filter(contact =>
         contact.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
@@ -15,7 +14,7 @@ export const ContactList = () => {
         <>
         {filterContacts.length  ? (
             <ContactListStyle>
-            {contacts.map(contact => (
+            {filterContacts.map(contact => (
                 <ContactsListItem
                     key={contact.id}
                     contact={contact}
